@@ -1,7 +1,8 @@
 django-skel
 ===========
 
-A modern Django (1.4) project skeleton.
+A modern Django (1.5) project skeleton.
+Forked from https://github.com/rdegges/django-skel
 
 ![A fancy Django project skeleton](https://github.com/rdegges/django-skel/raw/master/docs/source/_static/skel.jpg)
 
@@ -42,8 +43,8 @@ project, so be sure to read them before using this boilerplate.
 Install
 =======
 
-django-skel currently supports Django 1.4. To create a new django-skel base
-project, run the following command (this assumes you have Django 1.4 installed
+django-skel currently supports Django 1.5. To create a new django-skel base
+project, run the following command (this assumes you have Django 1.5 installed
 already):
 
     $ django-admin.py startproject --template=https://github.com/rdegges/django-skel/zipball/master woot
@@ -52,7 +53,7 @@ already):
 
 Where ``woot`` is the name of the project you'd like to create.
 
-This is possible because Django 1.4's ``startproject`` command allows you to
+This is possible because ``startproject`` command allows you to
 fetch a project template over HTTP (which is what we're doing here).
 
 While not strictly required, it is also recommended to do
