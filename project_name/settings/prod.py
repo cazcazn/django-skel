@@ -1,6 +1,5 @@
 """Production settings and globals."""
 
-
 from os import environ
 
 from memcacheify import memcacheify
@@ -9,6 +8,8 @@ from S3 import CallingFormat
 
 from common import *
 
+DEBUG = bool(environ.get('DJANGO_DEBUG', ''))
+TEMPLATE_DEBUG = DEBUG
 
 ########## EMAIL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
@@ -93,6 +94,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY', '')
 AWS_STORAGE_BUCKET_NAME = environ.get('AWS_STORAGE_BUCKET_NAME', '')
 AWS_AUTO_CREATE_BUCKET = True
 AWS_QUERYSTRING_AUTH = False
+AWS_S3_SECURE_URLS = False
 
 # AWS cache settings, don't change unless you know what you're doing:
 AWS_EXPIREY = 60 * 60 * 24 * 7
@@ -102,7 +104,7 @@ AWS_HEADERS = {
 }
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
-STATIC_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = 'http://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 ########## END STORAGE CONFIGURATION
 
 
